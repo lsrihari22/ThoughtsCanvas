@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Daily Journal</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <p class="navbar-brand">MyBlog App</p>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li id="home"><a href="/">HOME</a></li>
+        <li id="about"><a href="/about">ABOUT US</a></li>
+        <li id="contact"><a href="/contact">CONTACT US</a></li>
+        <!-- Add this code in the <head> section of your HTML file -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+          $(document).ready(function () {
+            // Capture the form submission or search action
+            $('#search-form').on('submit', function (event) {
+              event.preventDefault();
+              const query = $('#search-input').val();
+
+              // Send an AJAX request to the server with the search query
+              $.ajax({
+                url: '/search',
+                method: 'GET',
+                data: { query: query },
+                success: function (response) {
+                  // Handle the search results returned from the server
+                  // You can update the UI to display the search results
+                  $("body").html(response);
+                },
+                error: function (error) {
+                  console.error(error);
+                }
+              });
+            });
+          });
+        </script>
+
+        <!-- Add this HTML code wherever you want to display the search input field -->
+        <form id="search-form">
+          <input type="text" id="search-input" placeholder="Search blogs...">
+          <button type="submit">Search</button>
+        </form>
+
+      </ul>
+    </div>
+  </nav>

@@ -1,0 +1,115 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+.container-fluid {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #f8f8f8; /* Add a background color */
+}
+
+.navbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #333; /* Change the background color */
+  border: none;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.navbar-brand {
+  color: #fff; /* Set the brand text color */
+  font-size: 24px;
+}
+
+.navbar-nav li a {
+  color: #fff; /* Set the nav link text color */
+}
+
+.navbar-nav li a:hover,
+.navbar-nav li.active a {
+  color: #1abc9c; /* Change the link color on hover or when active */
+}
+
+.navbar-nav {
+  margin-right: 20px; /* Add some spacing between the links */
+}
+
+
+.footer-padding {
+	padding-bottom: 60px;
+}
+
+.footer {
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #1abc9c;
+}
+
+.footer p {
+	margin-top: 25px;
+	font-size: 12px;
+  color: #fff;
+}
+
+.new-blog-button {
+  background-color: #4CAF50; /* Set the background color */
+  color: white; /* Set the text color */
+  padding: 10px 20px; /* Add padding around the button */
+  border: none; /* Remove the default button border */
+  text-decoration: none; /* Remove any text underline */
+  cursor: pointer; /* Add a pointer cursor on hover */
+  font-size: 16px; /* Set the font size */
+  border-radius: 4px; /* Add rounded corners */
+}
+
+.new-blog-button:hover {
+  background-color: #45a049; /* Change the background color on hover */
+}
+
+body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+
+    .contact-container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-heading {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+    }
+
+    .contact-info a {
+      text-decoration: none;
+      color: #1abc9c;
+    }
+
+    .contact-info a:hover {
+      color: #16a085;
+    }
