@@ -115,7 +115,7 @@ app.get('/search', async function(req, res) {
       
     }
     res.render("home", {
-        startingContent: aboutContent,
+        startingContent: homeStartingContent,
         posts: searchResults
     });
 
