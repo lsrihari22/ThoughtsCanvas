@@ -1,5 +1,3 @@
-//jshint esversion:6
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -120,7 +118,7 @@ app.get('/search', async function(req, res) {
     });
 
   //res.json(searchResults);
-  console.log("searchResults:"+searchResults);
+  //console.log("searchResults:"+searchResults);
     
   } catch (err) {
     console.error(err);
