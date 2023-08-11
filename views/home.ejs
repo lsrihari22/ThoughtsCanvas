@@ -1,19 +1,19 @@
 <%- include("partials/header"); -%>
-
+<link href='https://unpkg.com/css.gg@2.0.0/icons/css/add.css' rel='styles.css'>
   <body>
     <div class="container">
       <!-- New Blog Button -->
-      <a href="/compose"><button class="new-blog-button">Add New Blog</button></a>
+      <a href="/compose"><button class="gg-add-r"></button></a>
 
       <h1>Welcome to ThoughtCanvas,</h1>
       <p>
         <%= startingContent %>
       </p>
       <% posts.forEach(function(post){ %>
-        <h1>
+        <h1 class="postTitle">
           <%=post.title%>
         </h1>
-        <p>
+        <p class="postContent">
           <%=post.content.substring(0, 1000) + " ..." %>
             <a href="/posts/<%=post._id%>">Read More</a>
         </p>

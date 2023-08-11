@@ -7,10 +7,15 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/styles.css">
-  <nav class="navbar navbar-default">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Flex:opsz,wght@8..144,300;8..144,500&family=Ubuntu&family=Unbounded&display=swap"
+    rel="styles.css">
+  <nav class="navbar  ">
     <div class="container">
       <div class="navbar-header">
-        <p class="navbar-brand"><a href="/">ThoughtCanvas</a></p>
+        <a href="/"><p class="navbar-brand font-effect-neon">ThoughtsCanvas</p></a>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li id="home"><a href="/">HOME</a></li>
@@ -43,10 +48,9 @@
           });
         </script>
 
-        <!-- Add this HTML code wherever you want to display the search input field -->
         <form id="search-form">
-          <input type="text" id="search-input" placeholder="Search blogs...">
-          <button type="submit">Search</button>
+          <input type="form-control mr-sm-2" type="search" id="search-input" placeholder="Search blogs...">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
 
       </ul>

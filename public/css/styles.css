@@ -1,3 +1,24 @@
+root {
+  --bg-color: white;
+  --text-color: rgba(29, 98, 227, 0.844);
+  --title-color: rgba(49, 103, 229, 0.929);
+}
+
+@media
+(prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #EDEDE9 ;
+    --text-color: #000000;
+    --title-color: #14213D ;
+  }
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: 'Ubuntu', sans-serif;
+  color: var(--text-color);
+}
+
 html {
   min-height: 100%;
   position: relative;
@@ -6,36 +27,47 @@ html {
 .container-fluid {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #f8f8f8; /* Add a background color */
+  background-color: #44c940; /* Add a background color */
 }
 
 .navbar {
   padding-top: 10px;
+  float: none;
   padding-bottom: 10px;
-  background-color: #333; /* Change the background color */
-  border: none;
-  border-radius: 0;
-  margin-bottom: 0;
+  background-color: #14213D; /* Change the background color */
+  border:none;
+  border-radius: 0rem;
+  margin-bottom: 2rem;
   font-size: 16px;
+  font-weight: 600;
   letter-spacing: 2px;
 }
-
-.navbar-brand {
-  color: #fff; /* Set the brand text color */
-  font-size: 24px;
+.navbar-right{
+  color: #248a22;
 }
 
-.navbar-nav li a {
-  color: #fff; /* Set the nav link text color */
+
+.navbar-nav li p {
+  color: #000000; /* Set the nav link text color */
 }
 
 .navbar-nav li a:hover,
 .navbar-nav li.active a {
-  color: #1abc9c; /* Change the link color on hover or when active */
+  color: #FCA311; /* Change the link color on hover or when active */
 }
 
 .navbar-nav {
   margin-right: 20px; /* Add some spacing between the links */
+}
+
+.navbar-brand {
+  color: #FCA311; 
+  /* font-family: "Audiowide", sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  /* font-family:  sans-serif; */
+  font-size: 30px;
+  text-decoration: wavy ;
+  /* //font-size: 24px; */
 }
 
 
@@ -49,7 +81,7 @@ html {
 	bottom: 0;
 	width: 100%;
 	height: 60px;
-	background-color: #1abc9c;
+	background-color: #222222;
 }
 
 .footer p {
@@ -59,57 +91,59 @@ html {
 }
 
 .new-blog-button {
-  background-color: #4CAF50; /* Set the background color */
+  background-color: #87bf89c9; /* Set the background color */
   color: white; /* Set the text color */
   padding: 10px 20px; /* Add padding around the button */
   border: none; /* Remove the default button border */
   text-decoration: none; /* Remove any text underline */
   cursor: pointer; /* Add a pointer cursor on hover */
   font-size: 16px; /* Set the font size */
-  border-radius: 4px; /* Add rounded corners */
+  border-radius: 2rem; /* Add rounded corners */
+}
+.compose{
+  margin: 2rem;
 }
 
 .new-blog-button:hover {
-  background-color: #45a049; /* Change the background color on hover */
+  background-color: #f2f2f2; 
 }
 
-body {
-      font-family: Arial, sans-serif;
-      background-color: #f1f1f1;
-      margin: 0;
-      padding: 0;
-    }
+.postTitle{
+  color: var(--title-color); 
+  font-family: 'Roboto Flex', sans-serif;
+}
 
-    .contact-container {
-      max-width: 600px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+ .gg-add-r {
+ box-sizing: border-box;
+ position: relative;
+ display: block;
+ margin-left: 3rem;
+ width: 22px;
+ height: 22px;
+ border: 2px solid;
+ color: #0b0b0b;
+ background-color: #58d05ac1;
+ transform: scale(var(--ggs,2));
+ border-radius: 4px
+}
 
-    .contact-heading {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
-    }
+.gg-add-r::after,
+.gg-add-r::before {
+ content: "";
+ display: block;
+ box-sizing: border-box;
+ position: absolute;
+ width: 10px;
+ height: 2px;
+ background: currentColor;
+ border-radius: 5px;
+ top: 8px;
+ left: 4px
+}
 
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .contact-info p {
-      margin: 10px 0;
-    }
-
-    .contact-info a {
-      text-decoration: none;
-      color: #1abc9c;
-    }
-
-    .contact-info a:hover {
-      color: #16a085;
-    }
+.gg-add-r::after {
+ width: 2px;
+ height: 10px;
+ top: 4px;
+ left: 8px
+} 

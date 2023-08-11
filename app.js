@@ -92,7 +92,7 @@ app.get("/posts/:postId", async function(req, res){
   
 });
 
-// Set up the server route to handle the search request
+// // Set up the server route to handle the search request
 app.get('/search', async function(req, res) {
   const query = req.query.query; // Assuming the search query is sent as a query parameter
   const regex = new RegExp(query, 'i');
