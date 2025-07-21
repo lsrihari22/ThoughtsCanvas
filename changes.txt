@@ -1,0 +1,14 @@
+
+6. Search Optimization
+7. UI/UX
+
+
+Done:
+xss-clean
+helmet
+express-mongo-sanitize
+
+2. No Error Handling Middleware
+3. MVC Structure Needed
+4. Slug-based URLs Recommended
+5. No Pagination

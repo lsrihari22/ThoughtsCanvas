@@ -1,23 +1,54 @@
 <%- include("partials/header"); -%>
-<link href='https://unpkg.com/css.gg@2.0.0/icons/css/add.css' rel='styles.css'>
-  <body>
-    <div class="container">
-      <!-- New Blog Button -->
-      <a href="/compose"><button class="gg-add-r"></button></a>
 
-      <h1>Welcome to ThoughtCanvas,</h1>
-      <p>
-        <%= startingContent %>
-      </p>
+<link href="https://unpkg.com/css.gg@2.0.0/icons/css/add.css" rel="stylesheet">
+
+<div class="container mt-4">
+  
+  <!-- New Blog Button -->
+  <div class="text-right mb-3">
+    <a href="/compose" class="btn btn-primary">
+      <i class="gg-add" style="margin-right:5px;"></i> New Blog
+    </a>
+  </div>
+
+  <h1 class="mb-3">Welcome to ThoughtCanvas,</h1>
+  <p class="lead"><%= startingContent %></p>
+
+  <hr>
+
+  <!-- Blog Posts Container (Important for AJAX search) -->
+  <div id="blog-container" class="row">
+    <% if (posts.length === 0) { %>
+      <div class="col-12">
+        <p class="text-muted text-center">No blogs found. Try another search or create a new one.</p>
+      </div>
+    <% } else { %>
       <% posts.forEach(function(post){ %>
-        <h1 class="postTitle">
-          <%=post.title%>
-        </h1>
-        <p class="postContent">
-          <%=post.content.substring(0, 1000) + " ..." %>
-            <a href="/posts/<%=post._id%>">Read More</a>
-        </p>
-        <% }) %>
-  </body>
+        <div class="col-md-6 mb-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= post.title %></h3>
+            </div>
+            <div class="panel-body">
+              <p><%= post.content.substring(0, 200) %>...</p>
+              <a href="/posts/<%= post.slug %>" class="btn btn-sm btn-info">Read More</a>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    <% } %>
+  </div>
+  <div class="text-center mt-4">
+  <ul class="pagination">
+    <% for(let i = 1; i <= totalPages; i++) { %>
+      <li class="<%= currentPage === i ? 'active' : '' %>">
+        <a href="/?page=<%= i %>"><%= i %></a>
+      </li>
+    <% } %>
+  </ul>
+</div>
 
-  <%- include("partials/footer"); -%>
+
+</div>
+
+<%- include("partials/footer"); -%>
