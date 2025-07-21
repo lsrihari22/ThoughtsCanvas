@@ -147,3 +147,59 @@ html {
  top: 4px;
  left: 8px
 } 
+
+/* -----------------------------
+   COMPOSE PAGE (Medium-like)
+----------------------------- */
+.compose-form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.compose-title {
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  outline: none;
+}
+
+.compose-title:focus {
+  border-bottom: 2px solid #1a8917;
+}
+
+.compose-body {
+  font-size: 18px;
+  line-height: 1.8;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  min-height: 300px;
+  resize: vertical;
+  outline: none;
+}
+
+.compose-body:focus {
+  border-bottom: 1px solid #1a8917;
+}
+
+/* -----------------------------
+   SINGLE POST PAGE
+----------------------------- */
+.blog-post {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.post-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.post-content {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #444;
+}

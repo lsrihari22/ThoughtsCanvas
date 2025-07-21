@@ -1,58 +1,74 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8">
   <title>ThoughtCanvas</title>
-  <meta charset="utf-8">
+  
+  <!-- Bootstrap & Custom CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Flex:opsz,wght@8..144,300;8..144,500&family=Ubuntu&family=Unbounded&display=swap"
-    rel="styles.css">
-  <nav class="navbar  ">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu&display=swap" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- AJAX Search Script -->
+  <script>
+    $(document).ready(function () {
+      $('#search-form').on('submit', function (event) {
+        event.preventDefault();
+        const query = $('#search-input').val().trim();
+
+        if (!query) return; // Ignore empty searches
+
+        $.ajax({
+          url: '/search',
+          method: 'GET',
+          data: { query },
+          success: function (response) {
+            // Replace only the blog container, not the entire page
+            $('#blog-container').html($(response).find('#blog-container').html());
+          },
+          error: function (error) {
+            console.error("Search error:", error);
+          }
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
-        <a href="/"><p class="navbar-brand font-effect-neon">ThoughtsCanvas</p></a>
+        <a href="/" class="navbar-brand">ThoughtsCanvas</a>
       </div>
+
       <ul class="nav navbar-nav navbar-right">
         <li id="home"><a href="/">HOME</a></li>
         <li id="about"><a href="/about">ABOUT US</a></li>
         <li id="contact"><a href="/contact">CONTACT US</a></li>
-        <!-- Add this code in the <head> section of your HTML file -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-          $(document).ready(function () {
-            // Capture the form submission or search action
-            $('#search-form').on('submit', function (event) {
-              event.preventDefault();
-              const query = $('#search-input').val();
 
-              // Send an AJAX request to the server with the search query
-              $.ajax({
-                url: '/search',
-                method: 'GET',
-                data: { query: query },
-                success: function (response) {
-                  // Handle the search results returned from the server
-                  // You can update the UI to display the search results
-                  $("body").html(response);
-                },
-                error: function (error) {
-                  console.error(error);
-                }
-              });
-            });
-          });
-        </script>
+        <li>
+          <!-- <form id="search-form" class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" id="search-input" name="query" placeholder="Search blogs...">
+            </div>
+            <button type="submit" class="btn btn-success">Search</button>
+          </form> -->
+          <form action="/search" method="GET" class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" name="query" placeholder="Search blogs..." required>
+            </div>
+            <button type="submit" class="btn btn-success">Search</button>
+          </form>
 
-        <form id="search-form">
-          <input type="form-control mr-sm-2" type="search" id="search-input" placeholder="Search blogs...">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-
+        </li>
       </ul>
     </div>
   </nav>
